@@ -1,4 +1,7 @@
-const express = require('express')
+const express = require('express');
+const {NlpManager} = require('node-nlp');
+const manager = new NlpManager({ languages: ['en'] });
+
 const app = express()
 const port = 3000
 
@@ -32,6 +35,40 @@ connection.query("select * from employee;", (err, result, fields)=>{
     return console.log(result);
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+
+//NLP training
+
+//greetings
+manager.addDocument('en', 'Hello', 'greeting');
+manager.addDocument('en', 'Hey', 'greeting');
+manager.addDocument('en', 'Hi', 'greeting');
+manager.addDocument('en', 'Good morning', 'greeting');
+manager.addDocument('en', 'sup', 'greeting');
+manager.addDocument('en', 'Good evening', 'greeting');
+manager.addDocument('en', 'Good afternoon', 'greeting');
+manager.addDocument('en', 'whatup dude', 'greeting');
+manager.addDocument('en', 'yo', 'greeting');
+
+manager.addAnswer('en', 'greeting', 'Hello! How can I help you today?');
+manager.addAnswer('en', 'greeting', 'Hi there! What can I do for you?');
+
+manager.addDocument('en', 'create a bill', 'bill.create');
+manager.addDocument('en', 'add an item', 'item.add');
+manager.addDocument('en', 'show my bills', 'bill.show');
+
+manager.addAnswer('en', 'bill.create', 'Sure! Let\'s create a new bill.');
+manager.addAnswer('en', 'item.add', 'Okay, tell me the item details.');
+manager.addAnswer('en', 'bill.show', 'Here are your bills:');
+
+manager.train().then(()=>{
+    manager.save();
+
+    app.get('/bot', (req, res)=>{
+        manager.process('en', req.query.message).then((ans)=>{
+            res.send(ans.answer);
+        })
+    });
 })
+
+
+app.listen(port);

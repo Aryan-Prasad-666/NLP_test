@@ -1,0 +1,517 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "hello": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hey": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "good,morn": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "sup": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "even,good": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "afternoon,good": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "dude,whatup": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "yo": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "a,bill,creat": {
+            "intent": "bill.create",
+            "domain": "default"
+          },
+          "add,an,item": {
+            "intent": "item.add",
+            "domain": "default"
+          },
+          "bill,my,show": {
+            "intent": "bill.show",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greeting": "default",
+          "bill.create": "default",
+          "item.add": "default",
+          "bill.show": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "Hello",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Hey",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Hi",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Good morning",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "sup",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Good evening",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Good afternoon",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "whatup dude",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "yo",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "create a bill",
+            "intent": "bill.create"
+          },
+          {
+            "domain": "default",
+            "utterance": "add an item",
+            "intent": "item.add"
+          },
+          {
+            "domain": "default",
+            "utterance": "show my bills",
+            "intent": "bill.show"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "hello": 1,
+              "hey": 1,
+              "hi": 1,
+              "good": 1,
+              "morn": 1,
+              "sup": 1,
+              "even": 1,
+              "afternoon": 1,
+              "whatup": 1,
+              "dude": 1,
+              "yo": 1,
+              "creat": 1,
+              "a": 1,
+              "bill": 1,
+              "add": 1,
+              "an": 1,
+              "item": 1,
+              "show": 1,
+              "my": 1
+            },
+            "intents": {
+              "greeting": 1,
+              "bill.create": 1,
+              "item.add": 1,
+              "bill.show": 1
+            },
+            "intentFeatures": {
+              "greeting": {
+                "hello": 1,
+                "hey": 1,
+                "hi": 1,
+                "good": 1,
+                "morn": 1,
+                "sup": 1,
+                "even": 1,
+                "afternoon": 1,
+                "whatup": 1,
+                "dude": 1,
+                "yo": 1
+              },
+              "bill.create": {
+                "creat": 1,
+                "a": 1,
+                "bill": 1
+              },
+              "item.add": {
+                "add": 1,
+                "an": 1,
+                "item": 1
+              },
+              "bill.show": {
+                "show": 1,
+                "my": 1,
+                "bill": 1
+              }
+            },
+            "featuresToIntent": {
+              "hello": [
+                "greeting"
+              ],
+              "hey": [
+                "greeting"
+              ],
+              "hi": [
+                "greeting"
+              ],
+              "good": [
+                "greeting"
+              ],
+              "morn": [
+                "greeting"
+              ],
+              "sup": [
+                "greeting"
+              ],
+              "even": [
+                "greeting"
+              ],
+              "afternoon": [
+                "greeting"
+              ],
+              "whatup": [
+                "greeting"
+              ],
+              "dude": [
+                "greeting"
+              ],
+              "yo": [
+                "greeting"
+              ],
+              "creat": [
+                "bill.create"
+              ],
+              "a": [
+                "bill.create"
+              ],
+              "bill": [
+                "bill.create",
+                "bill.show"
+              ],
+              "add": [
+                "item.add"
+              ],
+              "an": [
+                "item.add"
+              ],
+              "item": [
+                "item.add"
+              ],
+              "show": [
+                "bill.show"
+              ],
+              "my": [
+                "bill.show"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "hello",
+                "hey",
+                "hi",
+                "good",
+                "morn",
+                "sup",
+                "even",
+                "afternoon",
+                "whatup",
+                "dude",
+                "yo",
+                "creat",
+                "a",
+                "bill",
+                "add",
+                "an",
+                "item",
+                "show",
+                "my"
+              ],
+              "intents": [
+                "greeting",
+                "bill.create",
+                "item.add",
+                "bill.show"
+              ],
+              "perceptrons": [
+                [
+                  4.299169063568115,
+                  4.461924076080322,
+                  4.4079508781433105,
+                  3.423942804336548,
+                  1.1967058181762695,
+                  4.351049423217773,
+                  1.1298328638076782,
+                  1.1160578727722168,
+                  2.3531765937805176,
+                  2.3531765937805176,
+                  4.265936374664307,
+                  -2.446361541748047,
+                  -2.446361541748047,
+                  -4.86802339553833,
+                  -3.240187406539917,
+                  -3.240187406539917,
+                  -3.240187406539917,
+                  -2.416243553161621,
+                  -2.416243553161621,
+                  9.759237578134748
+                ],
+                [
+                  -0.36772772669792175,
+                  -0.3622184693813324,
+                  -0.3566863536834717,
+                  -0.40246036648750305,
+                  -0.14536157250404358,
+                  -0.34929922223091125,
+                  -0.12329773604869843,
+                  -0.11015833914279938,
+                  -0.21307601034641266,
+                  -0.21307601034641266,
+                  -0.3378413915634155,
+                  5.2354960441589355,
+                  5.2354960441589355,
+                  3.3844873905181885,
+                  -0.22383294999599457,
+                  -0.22383294999599457,
+                  -0.22383294999599457,
+                  -1.8553767204284668,
+                  -1.8553767204284668,
+                  0.3665595803765539
+                ],
+                [
+                  -0.4954937994480133,
+                  -0.4873805046081543,
+                  -0.4808605909347534,
+                  -0.5407777428627014,
+                  -0.1892842948436737,
+                  -0.47071290016174316,
+                  -0.1687498688697815,
+                  -0.15144895017147064,
+                  -0.2946797311306,
+                  -0.2946797311306,
+                  -0.45475783944129944,
+                  -0.14510461688041687,
+                  -0.14510461688041687,
+                  -0.3905702233314514,
+                  4.602964878082275,
+                  4.602964878082275,
+                  4.602964878082275,
+                  -0.22385922074317932,
+                  -0.22385922074317932,
+                  0.4803398115308041
+                ],
+                [
+                  -0.3787389099597931,
+                  -0.37209632992744446,
+                  -0.36557358503341675,
+                  -0.4533158540725708,
+                  -0.15544402599334717,
+                  -0.35846927762031555,
+                  -0.13189318776130676,
+                  -0.12512747943401337,
+                  -0.2298475056886673,
+                  -0.2298475056886673,
+                  -0.3470674753189087,
+                  -1.837968349456787,
+                  -1.837968349456787,
+                  3.394364356994629,
+                  -0.1447068601846695,
+                  -0.1447068601846695,
+                  -0.1447068601846695,
+                  5.236279487609863,
+                  5.236279487609863,
+                  0.3573012435145343
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "Hello"
+      ],
+      [
+        "en",
+        "Hey"
+      ],
+      [
+        "en",
+        "Hi"
+      ],
+      [
+        "en",
+        "Good morning"
+      ],
+      [
+        "en",
+        "sup"
+      ],
+      [
+        "en",
+        "Good evening"
+      ],
+      [
+        "en",
+        "Good afternoon"
+      ],
+      [
+        "en",
+        "whatup dude"
+      ],
+      [
+        "en",
+        "yo"
+      ],
+      [
+        "en",
+        "create a bill"
+      ],
+      [
+        "en",
+        "add an item"
+      ],
+      [
+        "en",
+        "show my bills"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "greeting": [
+          {
+            "answer": "Hello! How can I help you today?"
+          },
+          {
+            "answer": "Hi there! What can I do for you?"
+          }
+        ],
+        "bill.create": [
+          {
+            "answer": "Sure! Let's create a new bill."
+          }
+        ],
+        "item.add": [
+          {
+            "answer": "Okay, tell me the item details."
+          }
+        ],
+        "bill.show": [
+          {
+            "answer": "Here are your bills:"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
