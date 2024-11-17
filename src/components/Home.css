@@ -9,7 +9,7 @@
   /* Background and fonts */
   body {
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #2a2a72, #009ffd); /* Deep blue to light blue gradient */
+    background: linear-gradient(135deg, #2a2a72, #1e96ca); /* Deep blue to light blue gradient */
     color: #fff;
     overflow-x: hidden;
     height: 100vh;
@@ -20,6 +20,8 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    position: relative;
+    z-index: 1; 
   }
   
   /* Navbar Styles */
@@ -29,12 +31,12 @@
     align-items: center;
     padding: 20px 50px;
     background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px); /* For a frosted glass effect */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 100;
+    z-index: 10; /* Ensure it's above the Spline background */
     border-bottom: 2px solid #f1c40f; /* Gold bottom border */
   }
   
@@ -73,8 +75,10 @@
   /* Home header */
   .home-header {
     text-align: center;
-    padding-top: 120px; /* To prevent navbar from overlapping */
-    margin-bottom: 50px;
+    padding-top: 120px; /* Prevent navbar overlap */
+    z-index: 2;
+    position: relative;
+    color: white; /* Ensure text is visible over Spline */
   }
   
   .home-header h1 {
@@ -195,5 +199,15 @@
     100% {
       background-position: 100% 0%;
     }
+  }
+
+  .spline-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Place it behind everything else */
+    overflow: hidden;
   }
   

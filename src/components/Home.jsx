@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"; // for routing
+import Spline from '@splinetool/react-spline';
 import "./Home.css";
 
 const Home = () => {
@@ -36,10 +37,9 @@ const Home = () => {
         <p>Your one-stop solution for managing bills and items.</p>
       </header>
       
-      <section className="cta-section">
-        <button className="cta-button">Create New Bill</button>
-        <button className="cta-button">View Your Bills</button>
-      </section>
+      <div className="spline-background">
+        <Spline scene="https://prod.spline.design/WQOhTY9TlxPJEq6X/scene.splinecode" />
+      </div>
       
       <footer className="footer">
         <p>&copy; 2024 Billing Assistant</p>
