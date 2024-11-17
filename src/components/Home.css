@@ -1,0 +1,199 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Background and fonts */
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #2a2a72, #009ffd); /* Deep blue to light blue gradient */
+    color: #fff;
+    overflow-x: hidden;
+    height: 100vh;
+  }
+  
+  /* Main container for the home page */
+  .home {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px); /* For a frosted glass effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid #f1c40f; /* Gold bottom border */
+  }
+  
+  .navbar-logo h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f1c40f; /* Gold color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+  
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #f1c40f; /* Gold color */
+    transform: scale(1.1);
+    text-shadow: 0 0 10px #f1c40f, 0 0 20px #f1c40f;
+  }
+  
+  .nav-link:active {
+    transform: scale(1);
+  }
+  
+  /* Home header */
+  .home-header {
+    text-align: center;
+    padding-top: 120px; /* To prevent navbar from overlapping */
+    margin-bottom: 50px;
+  }
+  
+  .home-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    animation: fadeIn 1.5s ease-in-out;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+  }
+  
+  .home-header p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    animation: fadeIn 1.5s ease-in-out 0.5s;
+    margin-top: 10px;
+  }
+  
+  /* Call to action buttons */
+  .cta-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .cta-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #f1c40f, #8e44ad); /* Gold to purple gradient */
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cta-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    color: #f1c40f; /* Gold color */
+  }
+  
+  /* Footer text animation */
+  /* Footer text animation */
+.footer p {
+    animation: fadeIn 1.5s ease-in-out;
+    opacity: 1; 
+  }
+  
+  
+  /* Animations */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Animation for navbar */
+  .navbar-logo h2 {
+    animation: slideInFromLeft 1s ease-out;
+  }
+  
+  /* Smooth scroll for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Background gradient transition */
+  body {
+    background: linear-gradient(135deg, #2a2a72, #009ffd);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+  }
+  
+  @keyframes gradientBG {
+    0% {
+      background-position: 100% 0%;
+    }
+    50% {
+      background-position: 0% 100%;
+    }
+    100% {
+      background-position: 100% 0%;
+    }
+  }
+  
