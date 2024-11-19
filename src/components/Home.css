@@ -9,7 +9,7 @@
   /* Background and fonts */
   body {
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #2a2a72, #1e96ca); /* Deep blue to light blue gradient */
+    /* background: linear-gradient(135deg, #2a2a72, #1e96ca); Deep blue to light blue gradient */
     color: #fff;
     overflow-x: hidden;
     height: 100vh;
@@ -30,20 +30,21 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(179, 202, 219, 0.6);
+    /* background: rgba(1, 94, 161, 0.6); */
     backdrop-filter: blur(10px); /* Frosted glass effect */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 10; /* Ensure it's above the Spline background */
-    border-bottom: 2px solid #f1c40f; /* Gold bottom border */
+    border-bottom: 2px solid #187aaf; 
   }
   
   .navbar-logo h2 {
     font-size: 2rem;
     font-weight: bold;
-    color: #f1c40f; /* Gold color */
+    color: #3d4f61; 
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   }
   
@@ -54,18 +55,18 @@
   }
   
   .nav-link {
-    color: #fff;
+    color: #0a0646;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 1px;
     transition: color 0.3s ease, transform 0.3s ease;
   }
   
   .nav-link:hover {
-    color: #f1c40f; /* Gold color */
+    color: #0d4993; 
     transform: scale(1.1);
-    text-shadow: 0 0 10px #f1c40f, 0 0 20px #f1c40f;
+    text-shadow: 0 0 10px #5276bc, 0 0 20px #5276bc;
   }
   
   .nav-link:active {
@@ -75,17 +76,17 @@
   /* Home header */
   .home-header {
     text-align: center;
-    padding-top: 120px; /* Prevent navbar overlap */
+    padding-top: 120px; 
     z-index: 2;
     position: relative;
-    color: white; /* Ensure text is visible over Spline */
+    color: /*#85b3e0*/ #2d2e2e; 
   }
   
   .home-header h1 {
     font-size: 3.5rem;
     font-weight: 700;
     animation: fadeIn 1.5s ease-in-out;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
   }
   
   .home-header p {
@@ -131,17 +132,16 @@
     text-align: center;
     margin-top: auto;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #9ac5f0;
     position: relative;
     bottom: 0;
     width: 100%;
     font-size: 1rem;
     font-weight: 300;
     letter-spacing: 0.5px;
-    color: #f1c40f; /* Gold color */
+    color: #03011a; /* Gold color */
   }
   
-  /* Footer text animation */
   /* Footer text animation */
 .footer p {
     animation: fadeIn 1.5s ease-in-out;
@@ -209,5 +209,10 @@
     height: 100%;
     z-index: 0; /* Place it behind everything else */
     overflow: hidden;
+    background: #000;
+  }
+
+  html {
+    background: #000; /* Set to a neutral background color */
   }
   
